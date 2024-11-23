@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel='stylesheet' href='content/style.css'/>
-  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-</head>
-<body>
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-      <a class="navbarbrand" href="/"><i class="fa-solid fa-school" style="color: #B197FC;"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="/"><i class="fa-solid fa-house" style="color: #B197FC;"></i>  Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/public"><i class="fa-solid fa-clipboard" style="color: #B197FC;"></i>  Public</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<br>
+<!-- index.ejs -->
+<%- include('partials/header.ejs') %>
+<%- include('partials/main_nav.ejs') %>
 
-<!-- webpage content -->
 <main>
   <div class="jumbotron">
     <h1 class="display-4">Welcome to <%= title %> by Rachel</h1>
@@ -38,12 +9,5 @@
   </div>
 </main>
 
-  <!-- scripts -->
-  <script src="/scripts/app.js"></script>
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
-
-
+<%- include('partials/footer.ejs') %>
+<%- include('partials/scripts.ejs') %>
