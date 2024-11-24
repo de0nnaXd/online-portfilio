@@ -1,0 +1,59 @@
+<!-- tracker results here to display -->
+<%- include('partials/header.ejs') %>
+<%- include('partials/main_nav.ejs') %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1><%= title %></h1><br>
+
+            <!-- to add assignments -->
+            <h2>Add New Assignment</h2>
+            <form action="/public/add" method="POST">
+                <div class="form-group">
+                    <label for="assignment">Assignment</label>
+                    <input type="text" name="assignment" id="assignment" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="due_date">Due Date</label>
+                    <input type="text" name="due_date" id="due_date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Assignment</button>
+            </form>
+            <br>
+
+            <!-- Display the List of Assignments -->
+            <h2>Assignments List</h2>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center">Assignment</th>
+                        <th class="text-center">Due Date</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let count = 0; count < Trackerlist.length; count++) { %>
+                        <tr>
+                            <td class="text-center"><%= Trackerlist[count].assignment %></td>
+                            <td class="text-center"><%= Trackerlist[count].due_date %></td>
+                            <td class="text-center"><%= Trackerlist[count].description %></td>
+                            <td class="text-center">
+                                <a href="/public/edit/<%= Trackerlist[count]._id %>">Edit</a> |
+                                <a href="/public/delete/<%= Trackerlist[count]._id %>">Delete</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer.ejs') %>
+<%- include('partials/scripts.ejs') %>
