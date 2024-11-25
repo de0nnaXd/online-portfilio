@@ -26,7 +26,7 @@
             </form>
             <br>
 
-            <!-- Display the List of Assignments -->
+            <!-- display assignments -->
             <h2>Assignments List</h2>
             <table class="table table-bordered table-striped table-hover">
                 <thead>
@@ -46,6 +46,7 @@
                             <td class="text-center">
                                 <a href="/public/edit/<%= Trackerlist[count]._id %>">Edit</a> |
                                 <a href="/public/delete/<%= Trackerlist[count]._id %>">Delete</a>
+                                <a href="#" onclick="confirmDelete('<%= Trackerlist[count]._id %>')">Delete</a>
                             </td>
                         </tr>
                     <% } %>
