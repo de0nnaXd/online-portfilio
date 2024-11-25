@@ -2,23 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-/* GET home/splash page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { 
-    title: 'Assignment Tracker',
-    section: 'Never miss an assignment again with '});
-});
-
-/* GET public page. */
-router.get('/public', function(req, res, next) {
-  res.render('index', { 
-    title: 'Public',
-    section: 'View your assignments with '});
-});
-
-module.exports = router;
-
-// Import the tracker model to interact with the database
+// tracker model --> database
 let Tracker = require('../models/tracker');
 
 // C: add assignment --> POST
