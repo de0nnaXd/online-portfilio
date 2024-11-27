@@ -11,11 +11,7 @@ IIFE --> immediate invoked function expression
     window.addEventListener("load", Start);
 })();
 
-// delete confirmation --> public.ejs
-function confirmDelete(id) {
-    if (confirm("Confirm delete")) {
-        window.location.href = '/public/delete/' + id;
-    } else {
-        return false;
-    }
+
+function confirmDelete() {
+    return confirm('Are you sure you want to delete?');
 }
