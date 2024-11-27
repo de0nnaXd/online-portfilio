@@ -6,7 +6,7 @@ let mongoose = require('mongoose');
 let Tracker = require('../models/tracker');
 
 // C: add assignment --> POST
-router.post('/public/add', (req, res) => {
+router.post('/add', (req, res) => {
     // new assignment
     let newAssignment = new Tracker({
         assignment: req.body.assignment,
@@ -27,7 +27,7 @@ router.post('/public/add', (req, res) => {
 });
 
 // R: display
-router.get('/public', (req, res) => {
+router.get('/', (req, res) => {
     // Retrieve all assignments from the database
     Tracker.find()
         .then((trackerList) => {
@@ -40,36 +40,55 @@ router.get('/public', (req, res) => {
         });
 });
 
-// U: edit --> POST
-router.post('/public/edit/:id', (req, res) => {
-    // Find and update the assignment by its ID
-    Tracker.findByIdAndUpdate(req.params.id, {
-        assignment: req.body.assignment,
-        due_date: req.body.due_date,
-        description: req.body.description
-    })
-        .then(() => {
-            // After updating, redirect to /public to show the updated list
-            res.redirect('/public');
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).send('Cannot update assignment');
+router.get('/edit/:id',async(req,res,next)=>{
+    try{
+        const id = req.params.id;
+        const bookToEdit= await Tracker.findById(id);
+        res.render('edit',
+            {
+                title:'Edit Tracker',
+                Tracker:bookToEdit
+            }
+        )
+    }
+    catch(err)
+    {
+        console.error(err);
+        next(err); // passing the error
+    }
+});
+router.post('/edit/:id',async(req,res,next)=>{
+    try{
+        let id=req.params.id;
+        let updatedTracker = Tracker({
+            "_id":id,
+            "assignment": req.body.assignment,
+            "due_date": req.body.due_date,
+            "description": req.body.description
         });
+        Tracker.findByIdAndUpdate(id,updatedTracker).then(()=>{
+            res.redirect('/public')
+        })
+    }
+    catch(err){
+        console.error(err);
+        res.render('/public',{
+            error:'Error on the server'
+        })
+    }
 });
 
 // D: delete --> GET
-router.get('/public/delete/:id', (req, res) => {
+router.post('/delete/:id', (req, res) => {
+    let id = req.params.id
     // Find and remove the assignment by its ID
-    Tracker.findByIdAndRemove(req.params.id)
-        .then(() => {
-            // After deleting, redirect to /public to show the updated list
-            res.redirect('/public');
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).send('Cannot delete assignment');
-        });
+    // button confirm delete here
+    Tracker.deleteOne({_id:id}).then(()=>{
+        res.redirect('/public');
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send('Cannot delete assignment');
+    });
 });
 
 module.exports = router;

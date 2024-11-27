@@ -9,11 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET public page. */
-router.get('/public', function(req, res, next) {
+/*router.get('/public', function(req, res, next) {
   res.render('index', { 
     title: 'Public',
     section: 'View your assignments with '});
-});
+});*/
 
 module.exports = router;
 
