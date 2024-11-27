@@ -44,9 +44,11 @@
                             <td class="text-center"><%= Trackerlist[count].due_date %></td>
                             <td class="text-center"><%= Trackerlist[count].description %></td>
                             <td class="text-center">
-                                <a href="/public/edit/<%= Trackerlist[count]._id %>">Edit</a> |
-                                <a href="/public/delete/<%= Trackerlist[count]._id %>">Delete</a>
-                                <a href="#" onclick="confirmDelete('<%= Trackerlist[count]._id %>')">Delete</a>
+                                <a href="/public/edit/<%= Trackerlist[count]._id %>">Edit</a>
+                                <form action="/public/delete/<%= Trackerlist[count]._id %>" method="POST" onsubmit="return confirmDelete()">
+                                    <button type="submit" class="delete_button">Delete</button>
+                                </form>
+                            
                             </td>
                         </tr>
                     <% } %>
