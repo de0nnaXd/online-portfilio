@@ -43,11 +43,11 @@ router.get('/', (req, res) => {
 router.get('/edit/:id',async(req,res,next)=>{
     try{
         const id = req.params.id;
-        const bookToEdit= await Tracker.findById(id);
+        const assignmenttoEdit= await Tracker.findById(id);
         res.render('edit',
             {
                 title:'Edit Tracker',
-                Tracker:bookToEdit
+                Tracker:assignmenttoEdit
             }
         )
     }
