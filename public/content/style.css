@@ -1,1 +1,89 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* prevent horizontal scrolling */
+}
 
+.container {
+    min-height: 100%;
+    padding-bottom: 100px; /* accomadate for fixed footer */
+}
+
+.index-content {
+    padding: 20px;
+}
+
+.index-page .index-section {
+    background-image: url('/assests/images/code.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* 
+enable flexbot
+text adjustments
+*/
+.jumbotron {
+    height: 40vh;
+    display: flex; 
+    flex-direction: column; /* stack items vertical */
+    justify-content: center; /* vertical */
+    align-items: center;
+    text-align: center;
+}
+
+/* everything under jumbotron on index.ejs */
+.context-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.black-flexbox {
+    display: flex;
+    background-color: rgb(9, 56, 38);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* left section of page */
+.left-col {
+    flex: 1;
+    display: flex;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+.personal-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 40%;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+/* right section of page */
+.right-col {
+    flex: 1;
+    display: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.bio {
+ /*   width: 50vh;
+    height: 30vh;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+*/
+    color: rgb(0, 0, 0);
+}
