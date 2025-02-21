@@ -24,6 +24,7 @@ mongoDB.once('open', () => {
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let publicRouter = require('../routes/public'); 
+let projectsRouter = require('../routes/projects');
 
 let app = express();
 
@@ -42,6 +43,7 @@ app.use('/node_modules', express.static(path.join(__dirname, '..', 'node_modules
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/public', publicRouter); 
+app.use('/projects', projectsRouter);
 
 // shows 404 error
 app.use(function(req, res, next) {
