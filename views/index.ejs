@@ -1,13 +1,33 @@
 <!-- index.ejs -->
-<%- include('partials/header.ejs') %>
-<%- include('partials/main_nav.ejs') %>
+ <body class="index-page">
+  <%- include('partials/header.ejs') %>
+  <%- include('partials/main_nav.ejs') %>
 
-<main>
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to <%= title %> By Rachel</h1>
-    <p class="lead"><%= section %> Assignment Tracker</p>
-  </div>
-</main>
+  <main>
+    <section class="index-section index-content">
+      <div class="jumbotron">
+        <h1 class="display-4 index-title"><%= title %></h1>
+        <p class="lead index-description"><%= section %></p>
+      </div>
 
-<%- include('partials/footer.ejs') %>
-<%- include('partials/scripts.ejs') %>
+      <div class="context-section">
+
+        <div class="black-flexbox">
+          <div class="left-col">
+            <img src="/assests/images/image.jpg" alt="Personal Img" class="img-fluid personal-img"/>
+          </div>
+    
+          <div class="right-col">
+            <textarea class="form-control bio" rows="7" readonly>
+              text
+            </textarea>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+  <%- include('partials/footer.ejs') %>
+  <%- include('partials/scripts.ejs') %>
+ </body>
