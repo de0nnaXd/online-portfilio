@@ -4,16 +4,9 @@ var router = express.Router();
 /* GET home/splash page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'Assignment Tracker',
-    section: 'Never miss an assignment again with '});
+    title: 'Rachel Ayson',
+    section: 'Welcome to my Portfolio'});
 });
-
-/* GET public page. */
-/*router.get('/public', function(req, res, next) {
-  res.render('index', { 
-    title: 'Public',
-    section: 'View your assignments with '});
-});*/
 
 module.exports = router;
 
