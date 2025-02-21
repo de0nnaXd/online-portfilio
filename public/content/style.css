@@ -87,3 +87,35 @@ text adjustments
 */
     color: rgb(0, 0, 0);
 }
+
+
+/* projects page */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.project-section {
+    flex: 1 1 calc(33% - 20px);
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.project-description p {
+    font-size: 10px;
+    color: #1c3126;
+}
+
+    
