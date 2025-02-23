@@ -18,7 +18,7 @@ html, body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
+    height: 150vh;
     padding: 10px 20px;
     text-align: center;
     color: white;
@@ -124,7 +124,3 @@ text adjustments
     font-size: 15px;
     color: #5edea6;
 }
-
-
-
-    
