@@ -6,13 +6,13 @@
     <div class="row">
         <div class="col-md-12">
             <h1><%= title %></h1><br>
-            <h2>This is one of my HTML projects in which I developed an assignment tracker. Feel free to set up an interview date and time</h2>
+            <p>This is one of my HTML projects in which I developed an assignment tracker. Feel free to leave any comments and advice future employers</p>
 
-            <!-- to add assignments -->
-            <h2>Add New Assignment</h2>
+            <!-- to add -->
+            <h2>Add New Reminder/Note</h2>
             <form action="/public/add" method="POST">
                 <div class="form-group">
-                    <label for="assignment">Assignment</label>
+                    <label for="assignment">Reminder</label>
                     <input type="text" name="assignment" id="assignment" class="form-control" required>
                 </div>
                 <div class="form-group">
@@ -23,16 +23,16 @@
                     <label for="description">Description</label>
                     <textarea name="description" id="description" class="form-control" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Assignment</button>
+                <button type="submit" class="btn btn-primary">Click to Add</button>
             </form>
             <br>
 
-            <!-- display assignments -->
-            <h2>Assignments List</h2>
+            <!-- display -->
+            <h2>List</h2>
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">Assignment</th>
+                        <th class="text-center">Reminder</th>
                         <th class="text-center">Due Date</th>
                         <th class="text-center">Description</th>
                         <th class="text-center">Actions</th>
