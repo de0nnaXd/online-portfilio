@@ -12,3 +12,4 @@ let assignmentModel = mongoose.Schema ({
 );
 
 module.exports = mongoose.model('Tracker', assignmentModel);
+
