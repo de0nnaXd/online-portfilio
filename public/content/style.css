@@ -61,8 +61,8 @@ text adjustments
 }
 
 .personal-img {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 150px;
     border-radius: 40%;
     object-fit: cover;
     border: 2px solid black;
@@ -78,15 +78,11 @@ text adjustments
     justify-content: center;
 }
 
-.bio {
- /*   width: 50vh;
-    height: 30vh;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-*/
-    color: rgb(0, 0, 0);
+.bio-description p {
+    font-size: 15px;
+    color: #5edea6;
 }
+
 
 
 /* projects page */
@@ -94,11 +90,12 @@ text adjustments
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
+    padding: 80px;
 }
 
 .project-section {
-    flex: 1 1 calc(33% - 20px);
+    flex: 1 1 calc(35% - 20px);
     margin-bottom: 20px;
     border: 1px solid white;
     border-radius: 8px;
@@ -113,9 +110,21 @@ text adjustments
     display: block;
 }
 
-.project-description p {
-    font-size: 10px;
-    color: #1c3126;
+.project-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 20px;
 }
+
+.project-description p {
+    padding: 10px 10px;
+    font-size: 15px;
+    color: #5edea6;
+}
+
+
 
     
