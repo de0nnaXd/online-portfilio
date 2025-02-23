@@ -22,7 +22,7 @@ router.post('/add', (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).send('Cannot add assignment');
+            res.status(500).send('Cannot add');
         });
 });
 
@@ -32,11 +32,11 @@ router.get('/', (req, res) => {
     Tracker.find()
         .then((trackerList) => {
             console.log(trackerList);
-            res.render('public', { title: 'Assignments Tracker', Trackerlist: trackerList });
+            res.render('public', { title: 'Reminders & Notes', Trackerlist: trackerList });
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).send('Cannot display assignments');
+            res.status(500).send('Cannot display');
         });
 });
 
@@ -46,7 +46,7 @@ router.get('/edit/:id',async(req,res,next)=>{
         const assignmenttoEdit= await Tracker.findById(id);
         res.render('edit',
             {
-                title:'Edit Tracker',
+                title:'Edit An Entry',
                 Tracker:assignmenttoEdit
             }
         )
@@ -87,7 +87,7 @@ router.post('/delete/:id', (req, res) => {
         res.redirect('/public');
     }).catch((err) => {
         console.log(err);
-        res.status(500).send('Cannot delete assignment');
+        res.status(500).send('Cannot delete');
     });
 });
 
