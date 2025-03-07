@@ -124,3 +124,54 @@ text adjustments
     font-size: 15px;
     color: #5edea6;
 }
+
+/* mobile responsive */
+@media (max-width: 768px) {
+    .index-page .index-section {
+        background-attachment: scroll; /* adjust the fixed background */
+        height: 100vh; 
+    }
+
+    .context-section {
+        flex-direction: column; /* vertically stack sections */
+    }
+
+    /* block for person-img - do NOT display */
+    .left-col {
+        display: none;
+    }
+
+    /* block for bio - visable */
+    .right-col {
+        flex: none;
+        width: 100%; 
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* do NOT display person-img for mobile */
+    .personal-img {
+        display: none;
+    }
+
+    .bio-description p {
+        font-size: 14px; 
+    }
+
+    .projects-container {
+        padding: 20px;
+    }
+
+    .project-section {
+        flex: 1 1 100%; 
+        margin-bottom: 20px;
+    }
+
+    .project-description p {
+        font-size: 14px; 
+    }
+
+    .jumbotron {
+        height: 30vh; 
+    }
+}
