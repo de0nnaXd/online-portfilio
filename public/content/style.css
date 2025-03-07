@@ -74,16 +74,20 @@ text adjustments
     display: center;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 40px;
     justify-content: center;
 }
 
-.bio-description p {
-    font-size: 15px;
-    color: #5edea6;
+.bio-description {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100%
 }
 
-
+.bio-description p {
+    font-size: 17px;
+    color: #5edea6;
+}
 
 /* projects page */
 .projects-container {
